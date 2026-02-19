@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View our gallery of delicious dishes and restaurant ambiance at Delicious Bites.">
+    <title>Gallery - Delicious Bites</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            background: #667eea;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .category-btn:hover, .category-btn.active {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contactt.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Delicious Bites</h1>
+        <p>Where every bite feels like home</p>
+    </header>
+
+    <section>
+        <div class="container">
+            <h1>Our Gallery</h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Explore our collection of mouth-watering dishes and restaurant ambiance</p>
+
+            <div class="gallery-categories">
+                <button class="category-btn active">All</button>
+                <button class="category-btn">Main Dishes</button>
+                <button class="category-btn">Curries</button>
+                <button class="category-btn">Fast Food</button>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/pasta2.jpg" alt="Classic Pasta">
+                    <div class="gallery-overlay">
+                        <h3>Classic Pasta</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/Burgers.jpg" alt="Burger">
+                    <div class="gallery-overlay">
+                        <h3>Juicy Burger</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/swt pizza.jpg" alt="Pizza">
+                    <div class="gallery-overlay">
+                        <h3>Sweet Pizza</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/chicken.jpg" alt="Chicken Wings">
+                    <div class="gallery-overlay">
+                        <h3>Chicken Wings</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/fish.jpg" alt="Fish">
+                    <div class="gallery-overlay">
+                        <h3>Grilled Fish</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/beef curry.jpg" alt="Beef Curry">
+                    <div class="gallery-overlay">
+                        <h3>Beef Curry</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/chicken korma.jpg" alt="Chicken Korma">
+                    <div class="gallery-overlay">
+                        <h3>Chicken Korma</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/fish curry.jpg" alt="Fish Curry">
+                    <div class="gallery-overlay">
+                        <h3>Fish Curry</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/peanut chicken curry.jpg" alt="Peanut Chicken Curry">
+                    <div class="gallery-overlay">
+                        <h3>Peanut Chicken Curry</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/vegetable curry.jpg" alt="Vegetable Curry">
+                    <div class="gallery-overlay">
+                        <h3>Vegetable Curry</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/pepper beef.jpg" alt="Pepper Beef">
+                    <div class="gallery-overlay">
+                        <h3>Pepper Beef</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/smashed potatoes.jpg" alt="Mashed Potatoes">
+                    <div class="gallery-overlay">
+                        <h3>Mashed Potatoes</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/curries.jpg" alt="Mixed Curries">
+                    <div class="gallery-overlay">
+                        <h3>Mixed Curries</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/mex-fix.jpg" alt="Mex-Fix">
+                    <div class="gallery-overlay">
+                        <h3>Mex-Fix Special</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/chicken 2.jpg" alt="Roasted Chicken">
+                    <div class="gallery-overlay">
+                        <h3>Roasted Chicken</h3>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="images/beaty.jpeg" alt="Restaurant Ambiance">
+                    <div class="gallery-overlay">
+                        <h3>Our Beautiful Space</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fa-solid fa-envelope"></i> komuntaleliz152@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i> 0761375079 / 0751136762</p>
+                    <p><i class="fa-brands fa-whatsapp"></i> 0761375079</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Opening Hours</h3>
+                    <p><i class="fa-regular fa-clock"></i> Monday - Friday: 8:00 AM - 10:00 PM</p>
+                    <p><i class="fa-regular fa-clock"></i> Saturday: 9:00 AM - 11:00 PM</p>
+                    <p><i class="fa-regular fa-clock"></i> Sunday: 10:00 AM - 9:00 PM</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Lugard Street</p>
+                    <p>Fort Portal, Uganda</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://wa.me/256761375079" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2020 Delicious Bites. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
