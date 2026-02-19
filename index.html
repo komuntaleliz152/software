@@ -1,39 +1,107 @@
-<!--ordered list -->
-<ol>
-   <li>Apples</li>
-   <li>Oranges</li>
-   <li>Mangoes</li>
-   <li>tomatoes</li>
-   <li>Melon</li>
-</ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delicious Bites - Where every bite feels like home. Full service restaurant in Fort Portal, Uganda.">
+    <title>Delicious Bites - Home</title>
+    <link rel="stylesheet" href="style/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Delicious Bites</h1>
+        <p>Where every bite feels like home</p>
+    </header>
 
-<!--unordered list-->
-<ul>
-    <li>Uganda</li>
-    <li>Kenya</li>
-    <li>Tanzania</li>
-    <li>Sudan</li>
-    <li>Rwanda</li>
-</ul>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contactt.html">Contact</a></li>
+        </ul>
+    </nav>
 
-<h3>Descriptive list</h3>
-<dt>Goat</dt>
-<dd>Animal</dd>
-<dt>Orange</dt>
-<dd>Fruit</dd>
-<dt>Uganda</dt>
-<dd>Country</dd>
-<dt>Mango</dt>
-<dd>fruit</dd>
-<dt>Hen</dt>
-<dd>Bird</dd>
-<div>
-<img src="catz.jpeg"width="300px;"height="300"/>
+    <div class="hero" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('beaty.jpeg') no-repeat center center/cover;">
+        <h1>Welcome to Delicious Bites</h1>
+        <p>Discover flavors from around the world</p>
+    </div>
 
-</div>
-<div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iZTgw6yMx5M?si=hLv6BaxKorhyGQf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></video>
-</div>
-<div>
-    <a href="index2000.html">Go</a>
-</div>
+    <div class="container">
+        <div class="about-card">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0;">
+                <img src="lizzy.jpg" alt="Elizabeth - Founder of Delicious Bites" style="width: 100%; height: 100%; object-fit: cover;">
+                <div class="about-content">
+                    <h1>About Me</h1>
+                    <p>Hey there! I'm Elizabeth, the founder and CEO of Delicious Bites. It's my privilege to share the story behind our journey and vision with you.</p>
+                    <p>I'm a Ugandan by nationality from Fort Portal City. I love playing volleyball, listening to music, and watching movies during my free time. I'm passionate about cooking and discovering new culinary skills. I foster a culture of collaboration and excellence, and I continue to lead Delicious Bites towards new horizons with a unique blend of expertise, warmth, and vision.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section style="background-color: #f8f9fa;">
+        <div class="container">
+            <h1>About Us</h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem; line-height: 1.8;">
+                Welcome to Delicious Bites. We're a full-service restaurant specializing in delivering a relaxed dining experience. You are welcome to drop by or call to make your order, and we will be more than happy to serve you. We are growing and may soon open a location near you.
+            </p>
+            
+            <h2>Our History</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.8;">
+                Delicious Bites was established in 2020 by Komuntale Elizabeth and family, who are passionate about creating memorable meals. The restaurant offers a delicate mix of flavors from around the world and complements African dishes.
+            </p>
+            
+            <h2>Location</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">We are located in Fort Portal, Uganda - Lugard Street</p>
+            
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/385TBSilTcA?si=MxxefP92jJCrzSJV" title="Fort Portal Location" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Featured Menu Items</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <img src="pasta2.jpg" alt="Classic Pasta">
+                    <h3>Classic Pasta</h3>
+                    <p>20,000 UGX</p>
+                </div>
+                <div class="menu-item">
+                    <img src="burgers.jpg" alt="Burger">
+                    <h3>Burger</h3>
+                    <p>25,000 UGX</p>
+                </div>
+                <div class="menu-item">
+                    <img src="swt pizza.jpg" alt="Pizza">
+                    <h3>Pizza</h3>
+                    <p>50,000 UGX</p>
+                </div>
+                <div class="menu-item">
+                    <img src="chicken.jpg" alt="Chicken Wings">
+                    <h3>Chicken Wings</h3>
+                    <p>40,000 UGX</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem;">
+                <a href="menu.html" style="background: #667eea; color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; display: inline-block;">View Full Menu</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p><i class="fa-solid fa-envelope"></i> komuntaleliz152@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> 0761375079 / 0751136762</p>
+                <p><i class="fa-brands fa-whatsapp"></i> 0761375079</p>
+            </div>
+            <p>&copy; 2020 Delicious Bites. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
