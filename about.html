@@ -64,8 +64,37 @@
                 <p><i class="fa-solid fa-phone"></i> 0761375079 / 0751136762</p>
                 <p><i class="fa-brands fa-whatsapp"></i> 0761375079</p>
             </div>
-            <p>&copy; 2020 Delicious Bites. All Rights Reserved.</p>
+            
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://wa.me/256761375079" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2020 Delicious Bites. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script>
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
