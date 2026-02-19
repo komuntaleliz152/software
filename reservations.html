@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact Delicious Bites restaurant and register for updates.">
-    <title>Contact Us - Delicious Bites</title>
+    <meta name="description" content="Make a reservation at Delicious Bites restaurant.">
+    <title>Reservations - Delicious Bites</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -28,10 +28,10 @@
 
     <section>
         <div class="container">
-            <h1>Contact Us</h1>
-            <p style="text-align: center; margin-bottom: 2rem;">Register to receive updates and special offers from Delicious Bites</p>
-            
-            <form class="reservation-form" id="contactForm">
+            <h1>Make a Reservation</h1>
+            <p style="text-align: center; margin-bottom: 2rem;">Reserve your table and enjoy an unforgettable dining experience</p>
+
+            <form class="reservation-form" id="reservationForm">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name *</label>
@@ -45,38 +45,62 @@
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="contactNumber">Contact Number *</label>
-                        <input type="tel" id="contactNumber" name="contactNumber" required>
-                    </div>
-                    <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="streetAddress">Street Address</label>
-                        <input type="text" id="streetAddress" name="streetAddress">
+                        <label for="date">Reservation Date *</label>
+                        <input type="date" id="date" name="date" required>
                     </div>
                     <div class="form-group">
-                        <label for="city">City</label>
-                        <input type="text" id="city" name="city">
+                        <label for="time">Reservation Time *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <select id="guests" name="guests" required>
+                            <option value="">Select number of guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="9+">9+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Special Occasion</label>
+                        <select id="occasion" name="occasion">
+                            <option value="">Select occasion (optional)</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="business">Business Meeting</option>
+                            <option value="date">Date Night</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>Gender</label>
-                    <div class="radio-group">
-                        <input type="radio" id="female" name="gender" value="female">
-                        <label for="female">Female</label>
-                        <input type="radio" id="male" name="gender" value="male">
-                        <label for="male">Male</label>
-                    </div>
+                    <label for="specialRequests">Special Requests</label>
+                    <textarea id="specialRequests" name="specialRequests" placeholder="Any dietary restrictions, seating preferences, or special requests..."></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Submit Form
+                    <i class="fa-solid fa-calendar-check"></i> Reserve Table
                 </button>
 
                 <div id="formMessage" class="form-message"></div>
@@ -140,9 +164,14 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Contact form validation and submission
-        const form = document.getElementById('contactForm');
+        // Form validation and submission
+        const form = document.getElementById('reservationForm');
         const formMessage = document.getElementById('formMessage');
+
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -152,7 +181,7 @@
             const data = Object.fromEntries(formData);
             
             // Basic validation
-            if (!data.firstName || !data.lastName || !data.email || !data.contactNumber) {
+            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.date || !data.time || !data.guests) {
                 showMessage('Please fill in all required fields.', 'error');
                 return;
             }
@@ -164,18 +193,11 @@
                 return;
             }
 
-            // Phone validation (basic)
-            const phoneRegex = /^[0-9]{10,}$/;
-            if (!phoneRegex.test(data.contactNumber.replace(/\s/g, ''))) {
-                showMessage('Please enter a valid phone number (at least 10 digits).', 'error');
-                return;
-            }
-
-            // Simulate form submission
-            showMessage('Processing your registration...', 'success');
+            // Simulate form submission (in real app, this would send to a server)
+            showMessage('Processing your reservation...', 'success');
             
             setTimeout(() => {
-                showMessage(`Thank you, ${data.firstName}! You've been successfully registered. We'll send updates to ${data.email}.`, 'success');
+                showMessage(`Thank you, ${data.firstName}! Your reservation for ${data.guests} guest(s) on ${data.date} at ${data.time} has been received. We'll contact you at ${data.phone} to confirm.`, 'success');
                 form.reset();
             }, 1500);
         });
