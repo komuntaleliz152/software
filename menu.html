@@ -29,81 +29,127 @@
     <section>
         <div class="container">
             <h1>Our Menu</h1>
-            <div class="menu">
-                <div class="menu-item">
-                    <img src="images/pasta2.jpg" alt="Classic Pasta">
-                    <h3>Classic Pasta</h3>
-                    <p>20,000 UGX</p>
+            <p style="text-align: center; margin-bottom: 2rem;">Explore our delicious selection of dishes</p>
+
+            <div class="menu-filters">
+                <button class="filter-btn active" data-category="all">All Dishes</button>
+                <button class="filter-btn" data-category="pasta">Pasta & Pizza</button>
+                <button class="filter-btn" data-category="burgers">Burgers & Fast Food</button>
+                <button class="filter-btn" data-category="curries">Curries</button>
+                <button class="filter-btn" data-category="mains">Main Courses</button>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Pasta & Pizza</h2>
+                <div class="menu" data-category="pasta">
+                    <div class="menu-item">
+                        <img src="images/pasta2.jpg" alt="Classic Pasta">
+                        <h3>Classic Pasta</h3>
+                        <p class="dish-description">Creamy Italian pasta with fresh herbs and parmesan cheese</p>
+                        <p class="price">20,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/swt pizza.jpg" alt="Pizza">
+                        <h3>Sweet Pizza</h3>
+                        <p class="dish-description">Wood-fired pizza with premium toppings and mozzarella</p>
+                        <p class="price">50,000 UGX</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="images/Burgers.jpg" alt="Burger">
-                    <h3>Burger</h3>
-                    <p>25,000 UGX</p>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Burgers & Fast Food</h2>
+                <div class="menu" data-category="burgers">
+                    <div class="menu-item">
+                        <img src="images/Burgers.jpg" alt="Burger">
+                        <h3>Delicious Burger</h3>
+                        <p class="dish-description">Juicy beef patty with fresh lettuce, tomatoes, and special sauce</p>
+                        <p class="price">25,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/smashed potatoes.jpg" alt="Mashed Potatoes">
+                        <h3>Mashed Potatoes</h3>
+                        <p class="dish-description">Creamy mashed potatoes with butter and herbs</p>
+                        <p class="price">20,000 UGX</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="images/pepper beef.jpg" alt="Pepper Beef">
-                    <h3>Pepper Beef</h3>
-                    <p>45,000 UGX</p>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Curries</h2>
+                <div class="menu" data-category="curries">
+                    <div class="menu-item">
+                        <img src="images/beef curry.jpg" alt="Beef Curry">
+                        <h3>Beef Curry</h3>
+                        <p class="dish-description">Tender beef in rich curry sauce with aromatic spices</p>
+                        <p class="price">42,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/fish curry.jpg" alt="Fish Curry">
+                        <h3>Fish Curry</h3>
+                        <p class="dish-description">Fresh fish cooked in coconut curry with vegetables</p>
+                        <p class="price">40,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/peanut chicken curry.jpg" alt="Peanut Chicken Curry">
+                        <h3>Peanut Chicken Curry</h3>
+                        <p class="dish-description">Chicken in creamy peanut curry sauce, a house specialty</p>
+                        <p class="price">42,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/curries.jpg" alt="Mixed Curries">
+                        <h3>Mixed Curries Platter</h3>
+                        <p class="dish-description">A selection of our finest curries served with rice</p>
+                        <p class="price">37,500 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/chicken korma.jpg" alt="Chicken Korma">
+                        <h3>Chicken Korma</h3>
+                        <p class="dish-description">Mild and creamy chicken curry with cashews and cream</p>
+                        <p class="price">40,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/vegetable curry.jpg" alt="Vegetable Curry">
+                        <h3>Vegetable Curry</h3>
+                        <p class="dish-description">Fresh seasonal vegetables in flavorful curry sauce</p>
+                        <p class="price">38,500 UGX</p>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <img src="images/smashed potatoes.jpg" alt="Mashed Potatoes">
-                    <h3>Mashed Potatoes</h3>
-                    <p>20,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/swt pizza.jpg" alt="Pizza">
-                    <h3>Pizza</h3>
-                    <p>50,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/chicken.jpg" alt="Chicken Wings">
-                    <h3>Chicken Wings</h3>
-                    <p>40,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/fish.jpg" alt="Fish">
-                    <h3>Fish</h3>
-                    <p>35,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/chicken 2.jpg" alt="Chicken">
-                    <h3>Chicken</h3>
-                    <p>30,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/beef curry.jpg" alt="Beef Curry">
-                    <h3>Beef Curry</h3>
-                    <p>42,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/fish curry.jpg" alt="Fish Curry">
-                    <h3>Fish Curry</h3>
-                    <p>40,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/peanut chicken curry.jpg" alt="Peanut Chicken Curry">
-                    <h3>Peanut Chicken Curry</h3>
-                    <p>42,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/curries.jpg" alt="Curries">
-                    <h3>Curries</h3>
-                    <p>37,500 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/chicken korma.jpg" alt="Chicken Korma">
-                    <h3>Chicken Korma</h3>
-                    <p>40,000 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/vegetable curry.jpg" alt="Vegetable Curry">
-                    <h3>Vegetable Curry</h3>
-                    <p>38,500 UGX</p>
-                </div>
-                <div class="menu-item">
-                    <img src="images/mex-fix.jpg" alt="Mex-Fix">
-                    <h3>Mex-Fix</h3>
-                    <p>30,000 UGX</p>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="category-title">Main Courses</h2>
+                <div class="menu" data-category="mains">
+                    <div class="menu-item">
+                        <img src="images/pepper beef.jpg" alt="Pepper Beef">
+                        <h3>Pepper Beef</h3>
+                        <p class="dish-description">Sizzling beef strips with bell peppers and black pepper sauce</p>
+                        <p class="price">45,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/chicken.jpg" alt="Chicken Wings">
+                        <h3>Chicken Wings</h3>
+                        <p class="dish-description">Crispy fried chicken wings with your choice of sauce</p>
+                        <p class="price">40,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/fish.jpg" alt="Grilled Fish">
+                        <h3>Grilled Fish</h3>
+                        <p class="dish-description">Fresh fish grilled to perfection with lemon and herbs</p>
+                        <p class="price">35,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/chicken 2.jpg" alt="Roasted Chicken">
+                        <h3>Roasted Chicken</h3>
+                        <p class="dish-description">Whole roasted chicken with vegetables and gravy</p>
+                        <p class="price">30,000 UGX</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/mex-fix.jpg" alt="Mex-Fix">
+                        <h3>Mex-Fix Special</h3>
+                        <p class="dish-description">Mexican-inspired dish with spicy flavors and fresh ingredients</p>
+                        <p class="price">30,000 UGX</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,6 +197,7 @@
     </a>
 
     <script>
+        // Back to top button
         const backToTop = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
@@ -162,6 +209,35 @@
         backToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Menu filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const menuCategories = document.querySelectorAll('.menu-category');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const category = btn.getAttribute('data-category');
+
+                // Show/hide categories
+                menuCategories.forEach(cat => {
+                    if (category === 'all') {
+                        cat.style.display = 'block';
+                    } else {
+                        const menuDiv = cat.querySelector('.menu');
+                        if (menuDiv.getAttribute('data-category') === category) {
+                            cat.style.display = 'block';
+                        } else {
+                            cat.style.display = 'none';
+                        }
+                    }
+                });
+            });
         });
     </script>
 </body>
