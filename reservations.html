@@ -173,32 +173,117 @@
         const today = new Date().toISOString().split('T')[0];
         dateInput.setAttribute('min', today);
 
+        // Real-time validation
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                validateField(this);
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.classList.contains('invalid')) {
+                    validateField(this);
+                }
+            });
+        });
+
+        function validateField(field) {
+            const value = field.value.trim();
+            let isValid = true;
+            let errorMsg = '';
+
+            // Check if required field is empty
+            if (field.hasAttribute('required') && !value) {
+                isValid = false;
+                errorMsg = 'This field is required';
+            }
+            // Email validation
+            else if (field.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    isValid = false;
+                    errorMsg = 'Please enter a valid email address';
+                }
+            }
+            // Phone validation
+            else if (field.id === 'phone' && value) {
+                const phoneRegex = /^[0-9]{10,}$/;
+                if (!phoneRegex.test(value.replace(/\s/g, ''))) {
+                    isValid = false;
+                    errorMsg = 'Please enter a valid phone number (at least 10 digits)';
+                }
+            }
+            // Date validation
+            else if (field.type === 'date' && value) {
+                const selectedDate = new Date(value);
+                const todayDate = new Date(today);
+                if (selectedDate < todayDate) {
+                    isValid = false;
+                    errorMsg = 'Please select a future date';
+                }
+            }
+
+            // Update field styling
+            if (isValid) {
+                field.classList.remove('invalid');
+                field.classList.add('valid');
+                removeError(field);
+            } else {
+                field.classList.remove('valid');
+                field.classList.add('invalid');
+                showError(field, errorMsg);
+            }
+
+            return isValid;
+        }
+
+        function showError(field, message) {
+            removeError(field);
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message show';
+            errorDiv.textContent = message;
+            field.parentElement.appendChild(errorDiv);
+        }
+
+        function removeError(field) {
+            const existingError = field.parentElement.querySelector('.error-message');
+            if (existingError) {
+                existingError.remove();
+            }
+        }
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // Validate all required fields
+            let isFormValid = true;
+            inputs.forEach(input => {
+                if (!validateField(input)) {
+                    isFormValid = false;
+                }
+            });
+
+            if (!isFormValid) {
+                showMessage('Please fix the errors in the form before submitting.', 'error');
+                return;
+            }
+
             // Get form data
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
-            
-            // Basic validation
-            if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.date || !data.time || !data.guests) {
-                showMessage('Please fill in all required fields.', 'error');
-                return;
-            }
 
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showMessage('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Simulate form submission (in real app, this would send to a server)
+            // Simulate form submission
             showMessage('Processing your reservation...', 'success');
             
             setTimeout(() => {
                 showMessage(`Thank you, ${data.firstName}! Your reservation for ${data.guests} guest(s) on ${data.date} at ${data.time} has been received. We'll contact you at ${data.phone} to confirm.`, 'success');
                 form.reset();
+                // Remove validation classes
+                inputs.forEach(input => {
+                    input.classList.remove('valid', 'invalid');
+                    removeError(input);
+                });
             }, 1500);
         });
 
