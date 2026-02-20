@@ -656,7 +656,7 @@ body {
 
 /* Section animations on scroll */
 section {
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 0.8s ease-out forwards;
 }
 
