@@ -277,18 +277,30 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
 
-            // Simulate form submission
-            showMessage('Processing your reservation...', 'success');
+            // Create WhatsApp message
+            const message = `*New Reservation Request*%0A%0A` +
+                `Name: ${data.firstName} ${data.lastName}%0A` +
+                `Email: ${data.email}%0A` +
+                `Phone: ${data.phone}%0A` +
+                `Date: ${data.date}%0A` +
+                `Time: ${data.time}%0A` +
+                `Guests: ${data.guests}%0A` +
+                `Occasion: ${data.occasion || 'None'}%0A` +
+                `Special Requests: ${data.specialRequests || 'None'}`;
+
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/256761375079?text=${message}`, '_blank');
             
+            showMessage(`Thank you, ${data.firstName}! Your reservation request will be sent via WhatsApp. Please complete the message to confirm your booking.`, 'success');
+            
+            // Reset form after 2 seconds
             setTimeout(() => {
-                showMessage(`Thank you, ${data.firstName}! Your reservation for ${data.guests} guest(s) on ${data.date} at ${data.time} has been received. We'll contact you at ${data.phone} to confirm.`, 'success');
                 form.reset();
-                // Remove validation classes
                 inputs.forEach(input => {
                     input.classList.remove('valid', 'invalid');
                     removeError(input);
                 });
-            }, 1500);
+            }, 2000);
         });
 
         function showMessage(message, type) {

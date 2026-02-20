@@ -270,18 +270,27 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData);
 
-            // Simulate form submission
-            showMessage('Processing your registration...', 'success');
+            // Create WhatsApp message
+            const message = `*New Contact Registration*%0A%0A` +
+                `Name: ${data.firstName} ${data.lastName}%0A` +
+                `Phone: ${data.contactNumber}%0A` +
+                `Email: ${data.email}%0A` +
+                `City: ${data.city || 'Not provided'}%0A` +
+                `Gender: ${data.gender || 'Not provided'}`;
+
+            // Open WhatsApp with the message
+            window.open(`https://wa.me/256761375079?text=${message}`, '_blank');
             
+            showMessage(`Thank you, ${data.firstName}! Your registration will be sent via WhatsApp. Please complete the message to confirm.`, 'success');
+            
+            // Reset form after 2 seconds
             setTimeout(() => {
-                showMessage(`Thank you, ${data.firstName}! You've been successfully registered. We'll send updates to ${data.email}.`, 'success');
                 form.reset();
-                // Remove validation classes
                 inputs.forEach(input => {
                     input.classList.remove('valid', 'invalid');
                     removeError(input);
                 });
-            }, 1500);
+            }, 2000);
         });
 
         function showMessage(message, type) {
